@@ -5,8 +5,8 @@ class Contacto:
         self.apellido = apellido
         self.direccion = direccion
         self.correo = correo
-        self.telefonos = set()
-        self.palabrasClaves = {f"{nombre} {apellido}"}  
+        self.telefonos = []
+        self.palabrasClaves = []
         
     def darNombre(self):
         return self.nombre
@@ -40,11 +40,11 @@ class Contacto:
             self.telefonos.remove(telefonoEliminar)
             
     def agregarPalabra(self, palabra):
-        self.palabrasClaves.add(palabra)
+        self.palabrasClaves.append(palabra)
         
     def eliminarPalabra(self, palabraEliminar):
-        if palabraEliminar in self.palabrasClaves and palabraEliminar != f"{self.nombre} {self.apellido}":
+        if palabraEliminar in self.palabrasClaves:
             self.palabrasClaves.remove(palabraEliminar)
             
     def contienePalabraClave(self, palabra):
-        return palabra.lower() in {p.lower() for p in self.palabrasClaves}
+        return palabra in self.palabrasClaves
