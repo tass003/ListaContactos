@@ -13,7 +13,7 @@ class ListaDeContactos:
     def buscarContacto(self, nombre, apellido):
         for contacto in self.contactos:
             if contacto.darNombre().lower() == nombre.lower() and \
-               contacto.darApellido().lower() == apellido.lower():
+                contacto.darApellido().lower() == apellido.lower():
                 return contacto
         return None
         

@@ -33,7 +33,7 @@ class Contacto:
         self.correo = correo
         
     def agregarTelefono(self, telefono):
-        self.telefonos.add(telefono)
+        self.telefonos.append(telefono)
         
     def eliminarTelefono(self, telefonoEliminar):
         if telefonoEliminar in self.telefonos:
